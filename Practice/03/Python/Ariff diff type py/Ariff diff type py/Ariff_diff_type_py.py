@@ -1,0 +1,6 @@
+a = input("Введите первое число")
+b = input("Введите второе число")
+print(int(a) + int(b))
+print(int(a) - int(b))
+print(int(a) * int(b))
+print(int(a) / int(b))

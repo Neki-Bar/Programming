@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "chenge py", "chenge py\chenge py.pyproj", "{A08F75C2-DCC7-458A-9C34-F6808EF1A584}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A08F75C2-DCC7-458A-9C34-F6808EF1A584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08F75C2-DCC7-458A-9C34-F6808EF1A584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C598EA5-78C2-44F7-810D-FF2B7E182C66}
+	EndGlobalSection
+EndGlobal
