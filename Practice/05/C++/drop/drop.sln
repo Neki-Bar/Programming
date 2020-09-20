@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "drop", "drop\drop.vcxproj", "{88256076-2388-40C0-AF2B-8ECB75FA4C5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Debug|x64.ActiveCfg = Debug|x64
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Debug|x64.Build.0 = Debug|x64
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Debug|x86.ActiveCfg = Debug|Win32
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Debug|x86.Build.0 = Debug|Win32
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Release|x64.ActiveCfg = Release|x64
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Release|x64.Build.0 = Release|x64
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Release|x86.ActiveCfg = Release|Win32
+		{88256076-2388-40C0-AF2B-8ECB75FA4C5F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DF4BF34-CF2C-4F95-B8D8-52178B2DD8EA}
+	EndGlobalSection
+EndGlobal
