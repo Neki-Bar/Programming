@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "fact py", "fact py\fact py.pyproj", "{C462EEF0-E78F-4BDF-99CC-153D73BE6052}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C462EEF0-E78F-4BDF-99CC-153D73BE6052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C462EEF0-E78F-4BDF-99CC-153D73BE6052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77E0869B-087A-4F4C-8624-74545CAD051A}
+	EndGlobalSection
+EndGlobal
