@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main(){
-	setlocale(LC_ALL, "rus" ) ;
+	setlocale(LC_ALL, "rus" );
 	int i = 1;
 	int n;
 	vector <string> out;
@@ -28,4 +28,5 @@ int main(){
 		cout << "\nДля продолжения введите 1\nЧтобы выйти введите 0\n";
 		cin >> i;
 	}
+	
 }
