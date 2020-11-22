@@ -1,3 +1,0 @@
-﻿  guessnum.cpp
-C:\Users\Никита\Desktop\Programming\Practice\15\C++\guessnum\guessnum\guessnum.cpp(16,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  guessnum.vcxproj -> C:\Users\Никита\Desktop\Programming\Practice\15\C++\guessnum\Debug\guessnum.exe

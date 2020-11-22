@@ -1,3 +1,0 @@
-﻿  hobby.cpp
-C:\Users\Никита\Desktop\Programming\Practice\16\c++\hobby\hobby\hobby.cpp(33,16): warning C4804: >: небезопасное использование типа "bool" в операции
-  hobby.vcxproj -> C:\Users\Никита\Desktop\Programming\Practice\16\c++\hobby\Debug\hobby.exe
