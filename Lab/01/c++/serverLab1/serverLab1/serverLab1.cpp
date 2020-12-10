@@ -23,54 +23,41 @@ int getNumOfHour() {
     int locItem = 0;
     int sec = 0;
     if (cache == "") {
-
-
-
-        Client cli("http://api.openweathermap.org");
-        auto res = cli.Get("/data/2.5/onecall?appid=13fda1439b44a8ade1b03e584c366ec5&lat=44.9572&lon=34.1108&exclude=daily,minutely,current,alerts&lang=ru&units=metric");
-        if (res) {
-            if (res->status == 200) {
-                cache = json::parse(res->body);
-            }
-            else {
-                std::cout << "1Openweathermap status code: " << res->status << std::endl;
-            }
-        }
-        else {
-            auto err = res.error();
-            std::cout << "1Openweathermap error code: " << err << std::endl;
-        }
-
-
-
-
+                Client cli("http://api.openweathermap.org");
+                auto res = cli.Get("/data/2.5/onecall?appid=13fda1439b44a8ade1b03e584c366ec5&lat=44.9572&lon=34.1108&exclude=daily,minutely,current,alerts&lang=ru&units=metric");
+                if (res) {
+                    if (res->status == 200) {
+                        cache = json::parse(res->body);
+                    }
+                    else {
+                        std::cout << "1Openweathermap status code: " << res->status << std::endl;
+                    }
+                }
+                else {
+                    auto err = res.error();
+                    std::cout << "1Openweathermap error code: " << err << std::endl;
+                }
     }
     else {
-
-
-
-        
-        Client cli("http://worldtimeapi.org");
-        auto res = cli.Get("/api/timezone/Europe/Simferopol");
-        if (res) {
-            if (res->status == 200) {
-                sec = json::parse(res->body)["unixtime"].get<int>();
-            }
-            else {
-                std::cout << "Worldtimeapi status code: " << res->status << std::endl;
-            }
-        }
-        else {
-            auto err = res.error();
-            std::cout << "Worldtimeapi error code: " << err << std::endl;
-        }
-
-
-        int checkActual = 0;
+                Client cli("http://worldtimeapi.org");
+                auto res = cli.Get("/api/timezone/Europe/Simferopol");
+                if (res) {
+                    if (res->status == 200) {
+                        sec = json::parse(res->body)["unixtime"].get<int>();
+                    }
+                    else {
+                        std::cout << "Worldtimeapi status code: " << res->status << std::endl;
+                    }
+                }
+                else {
+                    auto err = res.error();
+                    std::cout << "Worldtimeapi error code: " << err << std::endl;
+                }
+                int checkActual = 0;
         
         if (sec) {
             for (int i = 0; i < 48; i++) {
-                if ((cache["hourly"][i]["dt"] - sec) > 0 && (cache["hourly"][i]["dt"] - sec) <= 1600) {
+                if ((cache["hourly"][i]["dt"] - sec) > 0 && (cache["hourly"][i]["dt"] - sec) <= 3600) {
                     checkActual = cache["hourly"][i]["dt"];
                     locItem = i;
                     break;
@@ -83,20 +70,20 @@ int getNumOfHour() {
 
         if (!checkActual) {
 
-            Client cli("http://api.openweathermap.org");
-            auto res = cli.Get("/data/2.5/onecall?appid=13fda1439b44a8ade1b03e584c366ec5&lat=44.9572&lon=34.1108&exclude=daily,minutely,current,alerts&lang=ru&units=metric");
-            if (res) {
-                if (res->status == 200) {
-                    cache = json::parse(res->body);
-                }
-                else {
-                    std::cout << "Openweathermap status code: " << res->status << std::endl;
-                }
-            }
-            else {
-                auto err = res.error();
-                std::cout << "Openweathermap error code: " << err << std::endl;
-            }
+                    Client cli("http://api.openweathermap.org");
+                    auto res = cli.Get("/data/2.5/onecall?appid=13fda1439b44a8ade1b03e584c366ec5&lat=44.9572&lon=34.1108&exclude=daily,minutely,current,alerts&lang=ru&units=metric");
+                    if (res) {
+                        if (res->status == 200) {
+                            cache = json::parse(res->body);
+                        }
+                        else {
+                            std::cout << "Openweathermap status code: " << res->status << std::endl;
+                        }
+                    }
+                    else {
+                        auto err = res.error();
+                        std::cout << "Openweathermap error code: " << err << std::endl;
+                    }
         }
     }
     if (cache == "")

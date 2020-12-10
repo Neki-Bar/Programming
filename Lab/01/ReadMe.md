@@ -4,7 +4,7 @@
 ФИЗИКО-ТЕХНИЧЕСКИЙ ИНСТИТУТ<br>
 Кафедра компьютерной инженерии и моделирования</p>
 <br>
-<h3 align="center">Отчёт по лабораторной работе № X<br> по дисциплине "Программирование"</h3>
+<h3 align="center">Отчёт по лабораторной работе № 1<br> по дисциплине "Программирование"</h3>
 <br><br>
 <p>студента 1 курса группы ПИ-б-о-202(1)<br>
 Баранского Никиты Александровича<br>
@@ -83,7 +83,9 @@ ________________________________________________________________
    6. Протестировал запрос в браузере.</br>
     На отправленный запрос получил ответ:</br></br>
 
-    `{"lat":44.96,"lon":34.11,"timezone":"Europe/Simferopol","timezone_offset":10800,"hourly":[{"dt":1605963600,"temp":5.05,"feels_like":1.31,"pressure":1026,"humidity":75,"dew_point":0.99,"clouds":96,"visibility":10000,"wind_speed":2.72,"wind_deg":17,"weather":[{"id":804,"main":"Clouds","description":"пасмурно","icon":"04d"}],"pop":0.01},......]}`
+    ```json
+    {"lat":44.96,"lon":34.11,"timezone":"Europe/Simferopol","timezone_offset":10800,"hourly":[{"dt":1605963600,"temp":5.05,"feels_like":1.31,"pressure":1026,"humidity":75,"dew_point":0.99,"clouds":96,"visibility":10000,"wind_speed":2.72,"wind_deg":17,"weather":[{"id":804,"main":"Clouds","description":"пасмурно","icon":"04d"}],"pop":0.01},......]}
+    ```
 </br>
 
 ### 3. Осуществил подготовку к работе с сервисом worldtimeapi.org.
@@ -97,7 +99,9 @@ ________________________________________________________________
 `http://worldtimeapi.org/api/timezone/Europe/Simferopol`
 4. Протестировал запрос в браузере.</br>
     На отправленный запрос получил ответ:</br></br>
-`{"abbreviation":"MSK","client_ip":"185.146.212.87","datetime":"2020-11-21T16:48:17.033676+03:00","day_of_week":6,"day_of_year":326,"dst":false,"dst_from":null,"dst_offset":0,"dst_until":null,"raw_offset":10800,"timezone":"Europe/Simferopol","unixtime":1605966497,"utc_datetime":"2020-11-21T13:48:17.033676+00:00","utc_offset":"+03:00","week_number":47}`
+```json
+{"abbreviation":"MSK","client_ip":"185.146.212.87","datetime":"2020-11-21T16:48:17.033676+03:00","day_of_week":6,"day_of_year":326,"dst":false,"dst_from":null,"dst_offset":0,"dst_until":null,"raw_offset":10800,"timezone":"Europe/Simferopol","unixtime":1605966497,"utc_datetime":"2020-11-21T13:48:17.033676+00:00","utc_offset":"+03:00","week_number":47}
+```
 
 </br>
 
@@ -113,7 +117,8 @@ ________________________________________________________________
     8. Открыл проект в Visual Studio и добавил в стандартые пути поиска заголовочных файлов путь к папке "include".
     9. Скопировал приведенный в методичке код.
 
-    ```   #include <iostream>
+    ```c++
+    #include <iostream>
     #include <httplib.h>
     using namespace httplib;
 
@@ -138,7 +143,7 @@ ________________________________________________________________
     3. Поместил файл httplib.h в папку "include".
     4. Открыл проект в Visual Studio и добавил в стандартые пути поиска заголовочных файлов путь к папке "include".
     5. Скопировал приведенный в методичке код.
-    ```
+    ```c++
     #include <iostream>
     #include <httplib.h>
     using namespace httplib;
@@ -173,7 +178,7 @@ ________________________________________________________________
 5. Поместил файл json.hpp в папку "include".
 6. Открыл проект в Visual Studio и добавил в стандартые пути поиска заголовочных файлов путь к папке "include".
 7. Скопировал приведенный в методичке код.
-```
+```c++
 #include <iostream>
 #include <string>
 #include <json.hpp>
@@ -223,7 +228,7 @@ R"({
 ### 6. Приступил к модернизации серверного приложения в проекте "serverLab1".
 
 1. В функции "main" добавил слушатель обращения к "/raw" и заменил порт на 3000
-    ```
+    ```c++
     int main() {
         Server svr;                    
         svr.Get("/", gen_response);   
@@ -234,7 +239,8 @@ R"({
     ```
 2. Создал функцию которая будет возвращать номер часа в массиве hourly ответа от openweathermao.org.
 
-    ```int getNumOfHour() {
+    ```c++
+        int getNumOfHour() {
         int locItem = 0;
         int sec = 0;
         if (cache == "") {
@@ -331,7 +337,7 @@ R"({
 
 3. Модифицировал функцию gen_response.
 
-    ```
+    ```c++
     void gen_response(const Request& req, Response& res) {
         int item = getNumOfHour();
         
@@ -377,7 +383,7 @@ R"({
 
 4. Создал функцию gen_responseRaw для отправки ответа на запрос к "/raw".
 
-    ```
+    ```c++
     void gen_responseRaw(const Request& req, Response& res) {
         int item = getNumOfHour();
         if (item >= 0) {
@@ -413,22 +419,24 @@ R"({
 
     Код приложения:
 
-    ```
+    ```python
     from tkinter import *
     import json
     import requests
 
-    def click(event):
-        quest()
 
-    def  quest():
+
+
+    def click(event):
         res = requests.get("http://localhost:3000/raw")
         info = res.json()
         desc.config(text=str(info["description"].encode('l1').decode()))
         main.config(text=str(info["temperature"]) + "°C")
 
     root = Tk()
-    root.bind("<Button-3>", )
+
+    root.bind("<Button-3>", click)
+
     root.geometry('130x190')
     root.title("Погода")
 
@@ -443,9 +451,10 @@ R"({
     footer.pack(side = BOTTOM)
 
 
-    quest()
+    click()
 
     root.mainloop()
+
     ```
 
     При запуске открывается окно вида:
