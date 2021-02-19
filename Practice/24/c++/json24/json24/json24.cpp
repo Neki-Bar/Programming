@@ -4,7 +4,6 @@
 #include <fstream>
 #include <map>
 
-#include <ctime>
 using json = nlohmann::json;
 
 int main() {
@@ -13,7 +12,12 @@ int main() {
 	std::ifstream file;
 
 	file.open(path);
-
+	if (file.is_open()) {
+		std::cout << "+";
+	}
+	else {
+		std::cout << "-";
+	}
 	json sourse;
 
 	file >> sourse;
@@ -26,7 +30,9 @@ int main() {
 
 	for (auto& temp : sourse.items()) {
 		if (temp.value()["task"]) {
-			users[temp.value()["userId"]]++;
+		
+				users[temp.value()["userId"]]++;
+		
 		}
 	}
 
@@ -44,9 +50,4 @@ int main() {
 	file1.open(path1);
 	file1 << res;
 	file1.close();
-
-
-
-
-
 }
