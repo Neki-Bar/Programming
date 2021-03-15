@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "dinamicMassive", "dinamicMassive\dinamicMassive.pyproj", "{217FB79C-C3BC-4951-981D-69A697435044}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{217FB79C-C3BC-4951-981D-69A697435044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217FB79C-C3BC-4951-981D-69A697435044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {724F9B1A-5C2E-4B54-BB5A-CAC325F15DA6}
+	EndGlobalSection
+EndGlobal
