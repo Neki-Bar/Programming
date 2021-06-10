@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>170</y>
+      <width>171</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="Load">
+       <property name="text">
+        <string>Загрузить картинку</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Save">
+       <property name="text">
+        <string>Сохранить картинку</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Encode">
+       <property name="text">
+        <string>Закодировать текст</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Decode">
+       <property name="text">
+        <string>Декодировать текст</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPlainTextEdit" name="TextEdit">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>170</y>
+      <width>351</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Введите текст</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>40</y>
+      <width>521</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Здесь отображаются сообщения!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Clear">
+    <property name="geometry">
+     <rect>
+      <x>599</x>
+      <y>410</y>
+      <width>101</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Очистить</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
